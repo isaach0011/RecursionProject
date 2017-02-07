@@ -25,4 +25,26 @@ public class RecursionTool
 			return calculateFibonacci(currentNumber - 1) + calculateFibonacci(currentNumber - 2);
 		}
 	}
+	
+	public int calculateIterativeFib(int currentNumber)
+	{
+		int a = 0; 
+		int fib = 1;
+		for(int i=0; i<currentNumber; i++) 
+		{
+		    fib = fib + a;
+		    a = fib;
+		}
+		return fib; 
+	}
+	
+	public int calculateIterativeFac(int currentNumber)
+	{
+		int product = 1;
+		for ( int j=1; j<=currentNumber; j++ )
+		{
+		    product *= j;
+		}
+		return product;
+	}
 }

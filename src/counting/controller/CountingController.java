@@ -31,7 +31,7 @@ public class CountingController
 		
 		if(isValid(input))
 		{
-			factorialInfo += mathTool.calculateFactorial(Integer.parseInt(input));
+			factorialInfo += mathTool.calculateIterativeFac(Integer.parseInt(input));
 		}
 		
 		mathTimer.stopTimer();
@@ -49,7 +49,7 @@ public class CountingController
 		
 		if(isValid(input))
 		{
-			fibonacciInfo += mathTool.calculateFibonacci(Integer.parseInt(input));
+			fibonacciInfo += mathTool.calculateIterativeFib(Integer.parseInt(input));
 		}
 		
 		mathTimer.stopTimer();
