@@ -1,7 +1,6 @@
 package counting.controller;
 
 import javax.swing.JOptionPane;
-
 import counting.model.*;
 import counting.view.*;
 
@@ -9,11 +8,13 @@ public class CountingController
 {
 	private CountingFrame baseFrame;
 	private RecursionTool mathTool;
+	private Timer mathTimer;
 	
 	public CountingController()
 	{
 		this.baseFrame = new CountingFrame(this);
 		this.mathTool = new RecursionTool();
+		this.mathTimer = new Timer();
 	}
 	
 	public void start()
@@ -25,12 +26,36 @@ public class CountingController
 	{
 		String factorialInfo = "The factorial of " + input + " is ";
 	
+		mathTimer.resetTimer();
+		mathTimer.startTimer();
+		
 		if(isValid(input))
 		{
 			factorialInfo += mathTool.calculateFactorial(Integer.parseInt(input));
 		}
 		
+		mathTimer.stopTimer();
+		factorialInfo += "\n" + mathTimer.toString();
+		
 		return factorialInfo;
+	}
+	
+	public String transferFibonacci(String input)
+	{
+		String fibonacciInfo = "The fibonacci of " + input + " is ";
+		
+		mathTimer.resetTimer();
+		mathTimer.startTimer();
+		
+		if(isValid(input))
+		{
+			fibonacciInfo += mathTool.calculateFibonacci(Integer.parseInt(input));
+		}
+		
+		mathTimer.stopTimer();
+		fibonacciInfo += "\n" + mathTimer;
+		
+		return fibonacciInfo;
 	}
 	
 	private boolean isValid(String testValue)

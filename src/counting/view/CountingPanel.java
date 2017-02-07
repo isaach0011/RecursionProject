@@ -80,7 +80,8 @@ public class CountingPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
-				
+				String input = inputField.getText();
+				display.setText(baseController.transferFibonacci(input));
 			}
 		});
 	}
